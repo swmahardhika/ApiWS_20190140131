@@ -29,7 +29,7 @@ public class JualBajuController {
 
     @Autowired
     private BajuRepo JualBaju;
-
+    
     @GetMapping("/jualbaju")
     public List<JualBaju> getAllJualBaju() {
         return JualBaju.findAll();
@@ -40,6 +40,7 @@ public class JualBajuController {
         return JualBaju.findById(id_baju).get();
     }
 
+    
     @PostMapping("/jualbaju")
     public JualBaju saveJualBajuDetails(@RequestBody JualBaju j) {
         return JualBaju.save(j);
@@ -55,5 +56,7 @@ public class JualBajuController {
         JualBaju.deleteById(idproduct);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
+    
+    
 }
 
